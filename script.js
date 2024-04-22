@@ -16,12 +16,19 @@
 
 const express =require("express");
 const app = express();
+
+app.set('view engine', 'ejs');
+
 app.get("/",function(req,res){
-  res.send("hellllll hlo hlo hlo");
+  res.render("index");
 });
 
-app.get("/profile",function(req,res){
-  res.send("helo this is my profile page");
+app.get("/about",function(req,res){
+  res.render("about");
 });
+
+// app.get("/profile",function(req,res){
+//   res.send("he this is my profile page");
+// });
 
 app.listen(3000);
